@@ -6,7 +6,10 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <sys/time.h>
 # include <unistd.h>
+
+# define PHILO_LIMIT 200
 
 typedef struct s_philo
 {
@@ -38,8 +41,12 @@ typedef struct s_program
 	t_philo			*philos;
 }					t_program;
 
+void				init_philos(t_program *program, t_philo *philo,
+						pthread_mutex_t *forks, char **av);
 int					ft_atoi(char *nptr);
-int					input_validation(char **av);
-/* int					init_list(t_program program, char **av, int ac);
- */
+int					input_validation(char **av, int ac);
+size_t				get_time(void);
+int					init_input(t_program *program, char **av, int ac);
+void	init_program(t_philo *philo, t_program *program);
+
 #endif

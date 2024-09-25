@@ -1,10 +1,15 @@
 #include "philo.h"
 #include "utils/atoi.c"
 #include "utils/init_validation.c"
+#include "utils/get_time.c"
 
 int	main(int ac, char **av)
 {
-	/* t_program program;
+	t_program program;
+	t_philo philo[PHILO_LIMIT];
+	pthread_mutex_t forks[PHILO_LIMIT];
+
+	/*
 	if (init_list(program, av, ac) != 0)
 	{
 		printf("Initialization successful!\n");
