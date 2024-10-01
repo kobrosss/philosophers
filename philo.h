@@ -46,7 +46,7 @@ void				init_philos(t_program *program, t_philo *philo,
 int					ft_atoi(char *nptr);
 int					input_validation(char **av, int ac);
 size_t				get_time(void);
-int					init_input(t_program *program, char **av, int ac);
+void					init_input(t_program *program, char **av);
 void	init_program(t_philo *philo, t_program *program);
 
 #endif
