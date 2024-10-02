@@ -43,10 +43,17 @@ typedef struct s_program
 
 void				init_philos(t_program *program, t_philo *philo,
 						pthread_mutex_t *forks, char **av);
+void				message(char *str, t_philo *philo, int id);
+void				*philo_routine(void *pointer);
+int					check_dead(t_philo *philo, size_t time_to_die);
+int					if_philo_dead(t_philo *philo);
+int					if_all_ate(t_philo *philo);
+void				*monitoring(void *pointer);
 int					ft_atoi(char *nptr);
 int					input_validation(char **av, int ac);
 size_t				get_time(void);
-void					init_input(t_program *program, char **av);
-void	init_program(t_philo *philo, t_program *program);
+void				init_input(t_program *program, char **av);
+void				init_program(t_philo *philo, t_program *program);
+int					dead_lock(t_philo *philo);
 
 #endif
