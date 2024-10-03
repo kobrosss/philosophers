@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 13:14:02 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/09/26 13:14:03 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:13:43 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	get_time(void)
 {
-	struct timeval time;
+	struct timeval	time;
 
 	if (gettimeofday(&time, NULL) == -1)
 		write(2, "ERROR: gettimeofday()\n", 23);

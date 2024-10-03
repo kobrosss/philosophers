@@ -6,13 +6,13 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 13:13:18 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/09/26 15:25:33 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:11:30 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-void init_input(t_program *program, char **av)
+void	init_input(t_program *program, char **av)
 {
 	program->philos->philos = ft_atoi(av[1]);
 	program->philos->time_to_die = (size_t)ft_atoi(av[2]);
