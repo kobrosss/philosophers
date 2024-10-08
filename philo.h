@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:11:11 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/03 17:11:12 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/08 21:44:45 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,16 @@ void				init_philos(t_program *program, t_philo *philo,
 void				message(char *str, t_philo *philo, int id);
 void				*philo_routine(void *pointer);
 int					check_dead(t_philo *philo, size_t time_to_die);
+int					create_threads(t_program *program, pthread_mutex_t *forks);
+void				exit_kill(t_program *program, pthread_mutex_t *forks);
 int					if_philo_dead(t_philo *philo);
 int					if_all_ate(t_philo *philo);
 void				*monitoring(void *pointer);
+void				thinking(t_philo *philo);
+void				sleeping(t_philo *philo);
+void				eating(t_philo *philo);
 int					ft_atoi(char *nptr);
+int					create_threads(t_program *program, pthread_mutex_t *forks);
 int					input_validation(char **av, int ac);
 size_t				get_time(void);
 void				init_input(t_program *program, char **av);
