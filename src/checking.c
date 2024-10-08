@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:35:38 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/03 17:15:14 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/09 00:18:48 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	*monitoring(void *pointer)
 	philo = (t_philo *)pointer;
 	while (1)
 	{
-		if (if_all_ate == 1 || if_philo_dead == 1)
+		if (if_all_ate(philo) == 1 || if_philo_dead(philo) == 1)
 			break ;
 	}
 	return (pointer);

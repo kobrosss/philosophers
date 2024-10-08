@@ -6,11 +6,11 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:36:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/03 17:14:28 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/08 23:05:40 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 void	message(char *str, t_philo *philo, int id)
 {
