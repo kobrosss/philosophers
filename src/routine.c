@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:17:23 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/09 00:47:02 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/09 19:07:10 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 void	thinking(t_philo *philo)
 {
+	printf("r1\n");
 	message("thinking", philo, philo->id);
 }
 
 void	sleeping(t_philo *philo)
 {
+	printf("r2\n");
 	message("sleep", philo, philo->id);
 	ft_usleep(philo->time_to_sleep);
 }
 
 void	eating(t_philo *philo)
 {
+	printf("r3\n");
 	pthread_mutex_lock(philo->r_fork);
 	message("has taken a fork", philo, philo->id);
 	if (philo->philos == 1)
@@ -35,19 +38,14 @@ void	eating(t_philo *philo)
 	}
 	pthread_mutex_lock(philo->l_fork);
 	message("has taken a fork", philo, philo->id);
-
 	philo->eat = 1;
 	message("is eating", philo, philo->id);
-
-	// Зафиксировать время приема пищи
 	pthread_mutex_lock(philo->meal_lock);
-	philo->last_meal = get_time();  // Обновление времени последнего приема пищи
+	philo->last_meal = get_time();
 	philo->eaten++;
 	pthread_mutex_unlock(philo->meal_lock);
-
 	ft_usleep(philo->time_to_eat);
 	philo->eat = 0;
-
 	pthread_mutex_unlock(philo->l_fork);
 	pthread_mutex_unlock(philo->r_fork);
 }

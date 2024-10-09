@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 13:13:18 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/09 01:00:11 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/09 19:11:43 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	init_input(t_program *program, char **av)
 {
+	write(1, "init 1\n ", 7);
 	program->philos->philos = ft_atoi(av[1]);
 	program->philos->time_to_die = (size_t)ft_atoi(av[2]);
 	program->philos->time_to_eat = (size_t)ft_atoi(av[3]);
@@ -26,6 +27,7 @@ void	init_input(t_program *program, char **av)
 void	init_philos(t_program *program, t_philo *philo, pthread_mutex_t *forks,
 		char **av)
 {
+	write(1, "init 2\n", 7);
 	int	i;
 
 	i = 0;
@@ -55,6 +57,7 @@ void	init_forks(pthread_mutex_t *forks, int philos_quantity)
 	int	i;
 
 	i = 0;
+	write(1, "init 3\n", 7);
 	while (i < philos_quantity)
 	{
 		pthread_mutex_init(&forks[i], NULL);
@@ -64,6 +67,7 @@ void	init_forks(pthread_mutex_t *forks, int philos_quantity)
 
 void	init_program(t_philo *philo, t_program *program)
 {
+	write(1, "init 4\n", 7);
 	program->dead_flag = 0;
 	program->philos = philo;
 	pthread_mutex_init(&program->dead_lock, NULL);

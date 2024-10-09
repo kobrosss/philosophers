@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:35:38 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/09 00:18:48 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/09 21:21:38 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 int	check_dead(t_philo *philo, size_t time_to_die)
 {
+	printf("check_dead\n");
 	pthread_mutex_lock(philo->meal_lock);
 	if (get_time() - philo->last_meal >= time_to_die && philo->eat == 0)
-		return (pthread_mutex_unlock(philo->meal_lock), 1);
+	{
+		pthread_mutex_unlock(philo->meal_lock);
+		return (1);
+	}
 	pthread_mutex_unlock(philo->meal_lock);
 	return (0);
 }
@@ -25,10 +29,11 @@ int	if_philo_dead(t_philo *philo)
 {
 	int	i;
 
+	printf("if philo_dead\n");
 	i = 0;
 	while (i < philo[0].philos)
 	{
-		if (check_dead(&philo[i], philo[i].time_to_die))
+		if (check_dead(&philo[i], philo[i].time_to_die) == 1)
 		{
 			message("dead", &philo[i], philo[i].id);
 			pthread_mutex_lock(philo[0].dead_lock);
@@ -46,6 +51,7 @@ int	if_all_ate(t_philo *philo)
 	int	i;
 	int	ate;
 
+	printf("if_all_ate\n");
 	i = 0;
 	ate = 0;
 	if (philo[0].times_of_eat == -42)
@@ -72,6 +78,7 @@ void	*monitoring(void *pointer)
 {
 	t_philo	*philo;
 
+	printf("monitoring\n");
 	philo = (t_philo *)pointer;
 	while (1)
 	{

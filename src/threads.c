@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:52:27 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/09 00:51:18 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/09 21:25:31 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	dead_lock(t_philo *philo)
 {
+	printf("dead_lock\n");
 	pthread_mutex_lock(philo->dead_lock);
 	if (*philo->dead == 1)
 		return (pthread_mutex_unlock(philo->dead_lock), 1);
@@ -23,23 +24,24 @@ int	dead_lock(t_philo *philo)
 
 void	*philo_routine(void *pointer)
 {
+	printf("routine\n");
 	t_philo	*philo;
 
 	philo = (t_philo *)pointer;
 	if(philo->id % 2 == 0)
 		ft_usleep(1);
-	while (!dead_lock(philo))
+	while (dead_lock(philo) != 1)
 	{
-		sleeping(philo);
 		eating(philo);
+		sleeping(philo);
 		thinking(philo);
-
 	}
 	return (pointer);
 }
 
 int	create_threads(t_program *program, pthread_mutex_t *forks)
 {
+	printf("threads\n ");
 	pthread_t	observer;
 	int			i;
 
