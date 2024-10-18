@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:17:23 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/09 19:07:10 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:56:41 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 void	thinking(t_philo *philo)
 {
-	printf("r1\n");
 	message("thinking", philo, philo->id);
 }
 
 void	sleeping(t_philo *philo)
 {
-	printf("r2\n");
-	message("sleep", philo, philo->id);
+	message("sleeping", philo, philo->id);
 	ft_usleep(philo->time_to_sleep);
 }
 
 void	eating(t_philo *philo)
 {
-	printf("r3\n");
 	pthread_mutex_lock(philo->r_fork);
 	message("has taken a fork", philo, philo->id);
 	if (philo->philos == 1)

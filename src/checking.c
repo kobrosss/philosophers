@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:35:38 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/09 21:21:38 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:48:51 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	check_dead(t_philo *philo, size_t time_to_die)
 {
-	printf("check_dead\n");
 	pthread_mutex_lock(philo->meal_lock);
 	if (get_time() - philo->last_meal >= time_to_die && philo->eat == 0)
 	{
@@ -29,7 +28,6 @@ int	if_philo_dead(t_philo *philo)
 {
 	int	i;
 
-	printf("if philo_dead\n");
 	i = 0;
 	while (i < philo[0].philos)
 	{
@@ -51,7 +49,6 @@ int	if_all_ate(t_philo *philo)
 	int	i;
 	int	ate;
 
-	printf("if_all_ate\n");
 	i = 0;
 	ate = 0;
 	if (philo[0].times_of_eat == -42)
@@ -78,7 +75,6 @@ void	*monitoring(void *pointer)
 {
 	t_philo	*philo;
 
-	printf("monitoring\n");
 	philo = (t_philo *)pointer;
 	while (1)
 	{

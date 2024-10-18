@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 19:33:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/08 21:47:24 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:56:09 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	exit_kill(t_program *program, pthread_mutex_t *forks)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	write(1, "ERROR : problem with threads/mutexes\n", 38);

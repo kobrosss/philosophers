@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:11:11 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/09 01:03:44 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:34:59 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int					ft_atoi(char *nptr);
 int					create_threads(t_program *program, pthread_mutex_t *forks);
 int					input_validation(char **av, int ac);
 size_t				get_time(void);
-void				init_input(t_program *program, char **av);
+void				init_input(t_philo *philo, char **av);
 void				init_forks(pthread_mutex_t *forks, int philos_quantity);
 void				init_program(t_philo *philo, t_program *program);
 int					dead_lock(t_philo *philo);

@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:46:12 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/09 00:14:49 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:55:22 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(int ac, char **av)
 {
-	t_program	program;
-	t_philo	philo[PHILO_LIMIT];
 	pthread_mutex_t	forks[PHILO_LIMIT];
+	t_program		program;
+	t_philo			philo[PHILO_LIMIT];
 
 	if (input_validation(av, ac))
 	{
