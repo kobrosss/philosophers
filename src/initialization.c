@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 13:13:18 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/18 13:48:12 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:48:23 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	init_forks(pthread_mutex_t *forks, int philos_quantity)
 
 void	init_program(t_philo *philo, t_program *program)
 {
-	write(1, "init 4\n", 7);
 	program->dead_flag = 0;
 	program->philos = philo;
 	pthread_mutex_init(&program->dead_lock, NULL);

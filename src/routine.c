@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:17:23 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/18 13:56:41 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:47:02 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	thinking(t_philo *philo)
 {
-	message("thinking", philo, philo->id);
+	message("is thinking", philo, philo->id);
 }
 
 void	sleeping(t_philo *philo)
 {
-	message("sleeping", philo, philo->id);
+	message("is sleeping", philo, philo->id);
 	ft_usleep(philo->time_to_sleep);
 }
 

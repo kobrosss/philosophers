@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:35:38 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/18 13:48:51 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/21 18:01:19 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	if_all_ate(t_philo *philo)
 	int	i;
 	int	ate;
 
-	i = 0;
+	i = 1;
 	ate = 0;
 	if (philo[0].times_of_eat == -42)
 		return (0);

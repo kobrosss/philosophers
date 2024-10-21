@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:52:27 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/10/18 13:55:41 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/10/21 19:30:53 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*philo_routine(void *pointer)
 
 	philo = (t_philo *)pointer;
 	if (philo->id % 2 == 0)
-		ft_usleep(1);
+		usleep(350);
 	while (!dead_lock(philo))
 	{
 		eating(philo);
